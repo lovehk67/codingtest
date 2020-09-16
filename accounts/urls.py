@@ -2,11 +2,12 @@ from django.urls import path, include
 from accounts.models import User
 from rest_framework import routers, serializers, viewsets
 
+from accounts import views
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ['username', 'password', 'email', 'first_name', 'last_name', 'address_new', 'address_old', 'phone']
+        fields = ['id', 'username', 'email', 'address_new', 'address_old', 'phone']
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
@@ -15,6 +16,8 @@ class UserViewSet(viewsets.ModelViewSet):
 router = routers.DefaultRouter()
 router.register('accounts', UserViewSet)
 
+
 urlpatterns = [
-    path('', include(router.urls)),
+    path('rest_api/', include(router.urls)),
+    path('', views.index),
 ]
