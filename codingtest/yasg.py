@@ -7,7 +7,6 @@ schema_view = get_schema_view(
     openapi.Info(
         title="코딩테스트 - 박혜경",
         default_version='v1',
-        description='고객정보 API',
     ),
     public=True,
     permission_classes=(permissions.AllowAny,),
