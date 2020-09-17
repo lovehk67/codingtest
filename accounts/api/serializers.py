@@ -1,13 +1,14 @@
 import json
 import requests
 from rest_framework import serializers
+from django.conf import settings
 
 from accounts.models import User
 
 
 def search_address(query, category):
     r = requests.get('http://api.vworld.kr/req/search', {
-        'key': 'F232944C-8E07-3EA0-81D3-DF4F9FDAABD0',
+        'key': settings.API_VWORLD_KEY,
         'service': 'search',
         'request': 'search',
         'version': '2.0',

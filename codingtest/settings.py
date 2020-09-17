@@ -107,9 +107,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko-kr'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
@@ -139,3 +139,5 @@ SWAGGER_SETTINGS = {
     },
     'LOGIN_URL': '/admin/login/'
 }
+
+API_VWORLD_KEY = 'F232944C-8E07-3EA0-81D3-DF4F9FDAABD0'
